@@ -1,30 +1,28 @@
-import { images } from "@/config/images";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import Testimonials from "@/components/sections/Testimonials";
 import CTABanner from "@/components/sections/CTABanner";
+import { images } from "@/config/images";
+import { metadata } from "./layout";
 
 export const metadata = {
-  title: "Home - Radiance Med Spa",
+  ...metadata,
+  title: "Home | Radiance Med Spa",
   description: "Discover our advanced aesthetic treatments at Radiance Med Spa.",
-  openGraph: {
-    title: "Home - Radiance Med Spa",
-    description: "Discover our advanced aesthetic treatments at Radiance Med Spa.",
-    image: images.hero.src,
-  },
 };
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Hero image={images.hero} />
+      <Hero
+        title="Welcome to Radiance Med Spa"
+        subtitle="Your journey to beauty and confidence starts here."
+        image={images.hero.src}
+        alt={images.hero.alt}
+      />
       <ServicesGrid />
       <Testimonials />
       <CTABanner />
-      <Footer />
     </>
   );
 }

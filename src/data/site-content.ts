@@ -1,38 +1,54 @@
 export const siteContent = {
-  phone: "(512) 555-0199",
+  phone: "(512) 555-1234",
   address: "4521 Westheimer Rd, Suite 200, Houston, TX 77027",
   email: "info@radiancemedspa.com",
   hours: "Mon-Fri: 8am-6pm, Sat: 9am-2pm, Sun: Closed",
   testimonials: [
     {
       name: "Maria L.",
-      text: "I had an amazing experience with the Botox treatment. The staff was professional and the results were fantastic!",
+      message: "I had an amazing experience! The staff was professional and the results were incredible.",
     },
     {
       name: "James T.",
-      text: "The laser therapy helped rejuvenate my skin. I feel so much more confident now!",
+      message: "The laser treatment changed my life. I feel more confident than ever!",
     },
     {
-      name: "Sophia R.",
-      text: "I love the fillers! The team made me feel comfortable and the results exceeded my expectations.",
+      name: "Sarah J.",
+      message: "Highly recommend Radiance Med Spa! The team is knowledgeable and caring.",
     },
   ],
   services: [
-    { title: "Botox", description: "Smooth out wrinkles and fine lines.", price: "$250 - $600" },
-    { title: "Fillers", description: "Add volume and fullness to your face.", price: "$400 - $800" },
-    { title: "Laser Therapy", description: "Advanced laser treatments for skin rejuvenation.", price: "$300 - $700" },
+    {
+      title: "Laser Treatments",
+      description: "Advanced laser technology for skin rejuvenation.",
+      price: "$200 - $500",
+    },
+    {
+      title: "Botox Injections",
+      description: "Smooth out wrinkles with our expert Botox treatments.",
+      price: "$300 - $600",
+    },
+    {
+      title: "Facial Treatments",
+      description: "Revitalize your skin with our luxurious facials.",
+      price: "$150 - $350",
+    },
   ],
   team: [
     {
       name: "Dr. Emily Carter",
       title: "Medical Director",
-      bio: "Dr. Carter is a board-certified dermatologist with over 10 years of experience in aesthetic medicine.",
+      bio: "Dr. Carter has over 10 years of experience in aesthetic medicine and is passionate about helping clients achieve their beauty goals.",
     },
     {
       name: "Sarah K.",
-      title: "Aesthetician",
-      bio: "Sarah specializes in laser treatments and skincare, ensuring every client leaves feeling radiant.",
+      title: "Licensed Aesthetician",
+      bio: "With a background in skincare and beauty, Sarah provides personalized treatments tailored to each client's needs.",
+    },
+    {
+      name: "Mark R.",
+      title: "Patient Coordinator",
+      bio: "Mark ensures a seamless experience for all clients, from booking appointments to follow-up care.",
     },
   ],
-  about: "At Radiance Med Spa, we believe in enhancing natural beauty through advanced aesthetic treatments. Our team of experts is dedicated to providing personalized care in a luxurious environment.",
 };

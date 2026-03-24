@@ -1,11 +1,11 @@
-const CTABanner = () => {
+export default function CTABanner() {
   return (
-    <section className="bg-primary text-white py-16 text-center">
-      <h2 className="text-3xl font-bold">Ready to Transform Your Look?</h2>
-      <p className="mt-4">Book your consultation today and discover the Radiance difference.</p>
-      <button className="mt-6 bg-white text-primary px-6 py-3 rounded-lg">Book Now</button>
+    <section className="bg-primary text-white py-16">
+      <h2 className="text-3xl font-bold text-center mb-4">Ready to Transform Your Look?</h2>
+      <p className="text-lg text-center mb-6">Book your consultation today and take the first step towards a more radiant you!</p>
+      <div className="text-center">
+        <button className="bg-accent text-white py-2 px-4 rounded-lg">Book Now</button>
+      </div>
     </section>
   );
-};
-
-export default CTABanner;
+}

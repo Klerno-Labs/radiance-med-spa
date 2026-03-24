@@ -1,20 +1,23 @@
-"use client";
-import { images } from "@/config/images";
+import { cn } from "@/lib/cn";
 
-const Hero = ({ image }) => {
+interface HeroProps {
+  title: string;
+  subtitle: string;
+  image: string;
+  alt: string;
+}
+
+export default function Hero({ title, subtitle, image, alt }: HeroProps) {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${image.src})` }}>
-      <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="relative z-10 text-white text-center">
-        <h1 className="text-5xl font-bold">{image.alt}</h1>
-        <p className="mt-4 text-lg">Experience the best in aesthetic treatments.</p>
-        <div className="mt-6">
-          <button className="bg-primary text-white px-6 py-3 rounded-lg">Book Consultation</button>
-          <button className="ml-4 border border-white text-white px-6 py-3 rounded-lg">View Treatments</button>
-        </div>
+    <section className="relative min-h-[80vh] flex items-center">
+      <div className="absolute inset-0">
+        <img src={image} alt={alt} className="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div className="relative z-10 p-8 bg-white/80 rounded-lg shadow-lg">
+        <h1 className="text-4xl font-bold">{title}</h1>
+        <p className="mt-4 text-lg">{subtitle}</p>
+        <button className="mt-6 bg-primary text-white py-2 px-4 rounded-lg">Book Now</button>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
