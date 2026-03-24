@@ -57,7 +57,7 @@ export default function ContactForm() {
       <button type="submit" disabled={isSubmitting} className="bg-primary text-white py-2 px-4 rounded-lg">
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>
-      {isSuccess && <p className="text-green-500 mt-4">Thank you! We'll be in touch within 24 hours.</p>}
+      {isSuccess && <p className="text-green-500 mt-4">Thank you! We&apos;ll be in touch within 24 hours.</p>}
       {error && <p className="text-red-500 mt-4">{error}</p>}
     </form>
   );
