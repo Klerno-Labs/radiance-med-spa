@@ -1,28 +1,30 @@
-import Hero from "@/components/sections/Hero";
-import ServicesGrid from "@/components/sections/ServicesGrid";
-import Testimonials from "@/components/sections/Testimonials";
-import CTABanner from "@/components/sections/CTABanner";
-import { images } from "@/config/images";
-import { metadata } from "./layout";
+import { Metadata } from "next";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import HeroSection from "@/components/home/HeroSection";
+import ServicesGrid from "@/components/home/ServicesGrid";
+import CTABanner from "@/components/home/CTABanner";
 
-export const metadata = {
-  ...metadata,
-  title: "Home | Radiance Med Spa",
-  description: "Discover our advanced aesthetic treatments at Radiance Med Spa.",
+export const metadata: Metadata = {
+  title: "Radiance Med Spa | Advanced Aesthetics in Houston",
+  description: "Radiance Med Spa offers premier aesthetic treatments including Botox, fillers, and laser therapy. Book your consultation today.",
+  openGraph: {
+    title: "Radiance Med Spa | Advanced Aesthetics",
+    description: "Premium medical spa services in Houston.",
+    images: ["https://mfile.z.ai/1774368232436-ff51f58548fd4d648064a76b46c74440.png"],
+  },
 };
 
 export default function Home() {
   return (
     <>
-      <Hero
-        title="Welcome to Radiance Med Spa"
-        subtitle="Your journey to beauty and confidence starts here."
-        image={images.hero.src}
-        alt={images.hero.alt}
-      />
-      <ServicesGrid />
-      <Testimonials />
-      <CTABanner />
+      <Navbar />
+      <main className="pt-20">
+        <HeroSection />
+        <ServicesGrid />
+        <CTABanner />
+      </main>
+      <Footer />
     </>
   );
 }
