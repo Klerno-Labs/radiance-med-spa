@@ -3,6 +3,7 @@ import { cn } from "@/lib/cn";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "@/styles/globals.css";
+import { z } from "zod";
 
 export const metadata = {
   title: "Radiance Med Spa",
