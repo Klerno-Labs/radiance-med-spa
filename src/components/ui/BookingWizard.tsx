@@ -3,7 +3,6 @@
 import type { Service } from "@/types/services"; // Fixed: Import missing type
 import { cn } from "@/lib/utils";
 
-import { useState } from "react";
 interface BookingWizardProps {
   onBook: (service: Service, date: string) => void;
 }

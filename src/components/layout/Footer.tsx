@@ -2,7 +2,6 @@ import React from "react";
 import { cn } from "@/lib/cn";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
-import Link from "next/link";
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-8">
