@@ -1,15 +1,21 @@
-import "./globals.css";
+"use client";
+
+import { ReactNode } from "react";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import "@/styles/globals.css";
 
 export const metadata = {
   title: "Radiance Med Spa",
   description: "Premier medical spa offering advanced aesthetic treatments.",
-  metadataBase: new URL("https://example.com"),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </>
   );
 }

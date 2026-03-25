@@ -1,26 +1,16 @@
-"use client";
-import { images } from "@/config/images";
+import React from "react";
 
-const teamMembers = [
-  {
-    name: "Dr. Emily Carter",
-    role: "Lead Dermatologist",
-    bio: "With over 15 years of experience, Dr. Carter specializes in advanced aesthetic treatments and skincare.",
-    image: images["team-1"].src,
-  },
-];
-
-export default function TeamSection() {
+export function TeamSection({ teamMembers }) {
   return (
-    <section className="py-16">
-      <h2 className="text-3xl font-bold text-center">Meet Our Team</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        {teamMembers.map((member, index) => (
-          <div key={index} className="bg-surface rounded-lg shadow-card p-6">
-            <img src={member.image} alt={member.name} className="w-full h-auto object-cover rounded-lg" />
-            <h3 className="mt-4 text-xl font-semibold">{member.name}</h3>
-            <p className="text-gray-600">{member.role}</p>
-            <p className="mt-2">{member.bio}</p>
+    <section className="py-16 md:py-24 lg:py-32">
+      <h2 className="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {teamMembers.map((member) => (
+          <div key={member.id} className="border rounded-lg p-4">
+            <img src={member.photo} alt={member.name} className="rounded-xl mb-4" />
+            <h3 className="text-xl font-semibold">{member.name}</h3>
+            <p className="text-sm">{member.role}</p>
+            <p className="text-sm">{member.bio}</p>
           </div>
         ))}
       </div>
