@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 
+import { useState } from "react";
 export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -47,7 +48,7 @@ export function ContactForm() {
       <Button type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
-      {isSuccess && <p className="text-green-500">Thank you! We&apos;ll be in touch within 24 hours.</p>}
+      {isSuccess && <p className="text-green-500">Thank you! We'll be in touch within 24 hours.</p>}
       {error && <p className="text-red-500">{error}</p>}
       <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
     </form>

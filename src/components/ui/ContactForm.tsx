@@ -69,7 +69,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
         <span className="text-2xl">✓</span>
         <div>
           <h3 className="font-bold">Thank You!</h3>
-          <p className="text-sm">We&apos;ll be in touch within 24 hours.</p>
+          <p className="text-sm">We'll be in touch within 24 hours.</p>
         </div>
       </div>
     );
