@@ -1,32 +1,74 @@
-"use client";
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { Loader2 } from 'lucide-react'
 
-import React from "react";
-import { cn } from "@/lib/cn";
-
-interface ButtonProps {
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
+  asChild?: boolean
+  isLoading?: boolean
+  href?: string
+  target?: string
+  rel?: string
 }
 
-export function Button({
-  variant = "primary",
-  size = "md",
+export default function Button({
   children,
+  variant = 'primary',
+  asChild = false,
+  isLoading = false,
   className,
-  onClick,
-  type = "button",
+  href,
+  target,
+  rel,
+  disabled,
+  ...props
 }: ButtonProps) {
-  const baseStyles = "rounded-lg focus:outline-none transition duration-200";
-  const variantStyles = variant === "primary" ? "bg-primary text-white" : variant === "secondary" ? "bg-secondary text-black" : "border border-gray-300 text-gray-700";
-  const sizeStyles = size === "lg" ? "py-3 px-6 text-lg" : size === "sm" ? "py-1 px-3 text-sm" : "py-2 px-4 text-base";
+  const BaseClasses = "inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+  
+  const Variants = {
+    primary: "bg-primary text-white hover:bg-primary-light shadow-card hover:shadow-hover",
+    secondary: "bg-secondary text-slate-900 hover:bg-yellow-400 shadow-card hover:shadow-hover",
+    outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+    ghost: "text-primary hover:bg-primary/10",
+  }
+
+  const widthClasses = props.className?.includes('w-full') ? 'w-full' : ''
+  const commonClasses = cn(BaseClasses, Variants[variant], widthClasses, className)
+
+  const content = (
+    <>
+      {children}
+      {isLoading && <Loader2 className="ml-2 h-4 w-4 animate-spin" />}
+    </>
+  )
+
+  if (asChild && href) {
+    // This shouldn't happen if we strictly separate buttons and links, 
+    // but included for robustness if internal Link needs button styling
+    return <Link href={href} className={commonClasses}>{content}</Link>
+  }
+
+  if (href) {
+    return (
+      <a 
+        href={href} 
+        className={commonClasses}
+        target={target}
+        rel={rel}
+        {...props}
+      >
+        {content}
+      </a>
+    )
+  }
 
   return (
-    <button className={cn(baseStyles, variantStyles, sizeStyles, className)} onClick={onClick} type={type}>
-      {children}
+    <button 
+      disabled={disabled || isLoading} 
+      className={commonClasses}
+      {...props}
+    >
+      {content}
     </button>
-  );
+  )
 }
