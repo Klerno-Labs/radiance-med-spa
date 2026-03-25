@@ -74,7 +74,7 @@ export default function ContactPage() {
           <div>
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">Contact Us</h1>
             <p className="text-xl text-slate-600 mb-12">
-              Have questions about our services? We'd love to hear from you. Fill out the form or reach us directly.
+              Have questions about our services? We&apos;d love to hear from you. Fill out the form or reach us directly.
             </p>
 
             <div className="space-y-8">

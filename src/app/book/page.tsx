@@ -78,7 +78,7 @@ export default function BookPage() {
           {/* Hero */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">Book Your Appointment</h1>
-            <p className="text-xl text-slate-600">Fill out the form below and we'll get back to you shortly.</p>
+            <p className="text-xl text-slate-600">Fill out the form below and we&apos;ll get back to you shortly.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

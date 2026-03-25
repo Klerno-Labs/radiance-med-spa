@@ -43,7 +43,7 @@ export default function Button({
   )
 
   if (asChild && href) {
-    // This shouldn't happen if we strictly separate buttons and links, 
+    // This shouldn&apos;t happen if we strictly separate buttons and links, 
     // but included for robustness if internal Link needs button styling
     return <Link href={href} className={commonClasses}>{content}</Link>
   }
