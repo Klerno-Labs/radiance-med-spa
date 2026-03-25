@@ -1,46 +1,99 @@
-import { z } from "zod";
-
 export const images = {
-  hero: {
-    src: "https://mfile.z.ai/1774368232436-ff51f58548fd4d648064a76b46c74440.png?ufileattname=202603250003432087531ef1be42f1_watermark.png",
-    alt: "A modern med spa waiting area with a sleek reception desk and potted plants",
+  // Homepage hero banner — the first image visitors see
+  "hero": {
+    src: "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Luxurious spa treatment room",
     width: 1200,
     height: 800,
   },
-  about: {
-    src: "https://mfile.z.ai/1774368231991-f2be17b6516846498329f9f687b160c2.png?ufileattname=20260325000344bc89cac665024163_watermark.png",
-    alt: "A professional female doctor consulting with a patient in a modern office",
+
+  // Alternative hero image (used on inner pages or as fallback)
+  "hero-alt": {
+    src: "https://images.pexels.com/photos/3985338/pexels-photo-3985338.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Professional facial treatment",
     width: 1200,
     height: 800,
   },
-  service-1: {
-    src: "https://mfile.z.ai/1774368240314-e1f4b92fbb3e445ab792e7f1f72e93e7.png?ufileattname=2026032500035235349d5bc5f7487c_watermark.png",
-    alt: "A medical aesthetician using a laser device on a client",
+
+  // About page or About section on homepage
+  "about": {
+    src: "https://images.pexels.com/photos/3764013/pexels-photo-3764013.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Elegant spa interior with calming atmosphere",
     width: 1200,
     height: 800,
   },
-  service-2: {
-    src: "https://mfile.z.ai/1774368240143-222dc45854da474faf9b43739c81d287.png?ufileattname=2026032500035281cebc6b4c0f46ed_watermark.png",
-    alt: "Sterile medical syringes and needles on a clean metal table",
+
+  // First service card image
+  "service-1": {
+    src: "https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Professional skincare treatment application",
     width: 1200,
     height: 800,
   },
-  service-3: {
-    src: "https://mfile.z.ai/1774368241441-314f69b9af9c4447a432d1ef5a8f722b.png?ufileattname=202603250003521ab372ffb86a49cb_watermark.png",
-    alt: "A woman relaxing on a comfortable facial bed with a sheet",
+
+  // Second service card image
+  "service-2": {
+    src: "https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Relaxing spa environment",
     width: 1200,
     height: 800,
   },
-  gallery: {
-    src: "https://mfile.z.ai/1774368249243-01afdd2d6b5245b18eac175462a24c86.png?ufileattname=20260325000401dff5de9ac22d48c3_watermark.png",
-    alt: "A close-up of a woman's flawless glowing skin texture",
+
+  // Third service card image
+  "service-3": {
+    src: "https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Modern aesthetic clinic interior",
     width: 1200,
     height: 800,
   },
-  logo: {
-    src: "https://mfile.z.ai/1774368256672-fac9f35ffd6041968477c0850cda7d21.png?ufileattname=2026032500040951b6b393e37244a8_watermark.png",
-    alt: "Radiance Med Spa Logo",
+
+  // Gallery image 1
+  "gallery-1": {
+    src: "https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Spa products and essential oils arrangement",
     width: 1200,
     height: 800,
   },
-};
+
+  // Gallery image 2
+  "gallery-2": {
+    src: "https://images.pexels.com/photos/3738355/pexels-photo-3738355.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Relaxing spa treatment scene",
+    width: 1200,
+    height: 800,
+  },
+
+  // Team member photo
+  "team-1": {
+    src: "https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Professional aesthetician portrait",
+    width: 1200,
+    height: 800,
+  },
+
+  // Gallery image 3
+  "gallery-3": {
+    src: "https://images.pexels.com/photos/3018845/pexels-photo-3018845.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Premium skincare products lineup",
+    width: 1200,
+    height: 800,
+  },
+
+  // Call-to-action section background
+  "cta": {
+    src: "https://images.pexels.com/photos/3757957/pexels-photo-3757957.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Serene spa reception area",
+    width: 1200,
+    height: 800,
+  },
+
+  // Testimonials section background or decoration
+  "testimonial-bg": {
+    src: "https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop",
+    alt: "Wellness and beauty treatment detail",
+    width: 1200,
+    height: 800,
+  },
+} as const;
+
+export type ImageSlot = keyof typeof images;

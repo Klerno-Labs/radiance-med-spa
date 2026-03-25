@@ -1,20 +1,28 @@
-import BeforeAfterSlider from "@/components/sections/BeforeAfterSlider";
+import { images } from "@/config/images";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Gallery - Radiance Med Spa",
-  description: "Explore our gallery of before and after transformations at Radiance Med Spa.",
+  title: "Radiance Med Spa - Gallery",
+  description: "Explore our gallery of treatments and results.",
   openGraph: {
-    title: "Gallery - Radiance Med Spa",
-    description: "Explore our gallery of before and after transformations at Radiance Med Spa.",
-    image: "https://mfile.z.ai/1774368232436-ff51f58548fd4d648064a76b46c74440.png?ufileattname=202603250003432087531ef1be42f1_watermark.png",
+    title: "Radiance Med Spa - Gallery",
+    description: "Explore our gallery of treatments and results.",
+    images: [images.hero.src],
   },
 };
 
-export default function GalleryPage() {
+export default function Gallery() {
   return (
-    <main>
-      <h1 className="text-4xl font-bold text-center py-16">Before & After Gallery</h1>
-      <BeforeAfterSlider />
-    </main>
+    <>
+      <Navbar />
+      <div className="py-16">
+        <h1 className="text-4xl font-bold text-center">Gallery</h1>
+        <p className="mt-4 text-lg text-center">
+          Browse through our gallery to see the stunning results of our treatments.
+        </p>
+      </div>
+      <Footer />
+    </>
   );
 }

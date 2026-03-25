@@ -1,30 +1,28 @@
 import { images } from "@/config/images";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "About Us | Radiance Med Spa",
-  description: "Learn about our mission and the team behind Radiance Med Spa.",
+  title: "Radiance Med Spa - About Us",
+  description: "Learn more about our mission and team.",
   openGraph: {
-    title: "About Us | Radiance Med Spa",
-    description: "Learn about our mission and the team behind Radiance Med Spa.",
-    images: [
-      {
-        url: images.about.src,
-        width: 1200,
-        height: 800,
-        alt: images.about.alt,
-      },
-    ],
+    title: "Radiance Med Spa - About Us",
+    description: "Learn more about our mission and team.",
+    images: [images.hero.src],
   },
 };
 
 export default function About() {
   return (
-    <div className="py-16">
-      <h1 className="text-4xl font-bold text-center mb-8">About Radiance Med Spa</h1>
-      <p className="text-lg text-center mb-4">
-        At Radiance Med Spa, we are committed to providing advanced aesthetic treatments that enhance your natural beauty. Our team of certified professionals is dedicated to ensuring your comfort and satisfaction.
-      </p>
-      <img src={images.about.src} alt={images.about.alt} className="w-full h-auto rounded-xl" />
-    </div>
+    <>
+      <Navbar />
+      <div className="py-16">
+        <h1 className="text-4xl font-bold text-center">About Us</h1>
+        <p className="mt-4 text-lg text-center">
+          At Radiance Med Spa, we are dedicated to providing the highest quality aesthetic treatments in a luxurious environment. Our team of experienced professionals is committed to helping you achieve your beauty goals.
+        </p>
+      </div>
+      <Footer />
+    </>
   );
 }

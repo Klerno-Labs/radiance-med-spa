@@ -1,17 +1,28 @@
 import { images } from "@/config/images";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Specials | Radiance Med Spa",
-  description: "Check out our latest promotions and special offers.",
+  title: "Radiance Med Spa - Specials",
+  description: "Check out our latest promotions and offers.",
+  openGraph: {
+    title: "Radiance Med Spa - Specials",
+    description: "Check out our latest promotions and offers.",
+    images: [images.hero.src],
+  },
 };
 
 export default function Specials() {
   return (
-    <div className="py-16">
-      <h1 className="text-4xl font-bold text-center mb-8">Current Specials</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Special offers will be listed here */}
+    <>
+      <Navbar />
+      <div className="py-16">
+        <h1 className="text-4xl font-bold text-center">Specials</h1>
+        <p className="mt-4 text-lg text-center">
+          Discover our latest promotions and special offers designed to help you look and feel your best.
+        </p>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

@@ -1,25 +1,36 @@
+"use client";
 import { images } from "@/config/images";
+
+const services = [
+  {
+    title: "Botox",
+    description: "Smooth out wrinkles and fine lines with our expert Botox treatments.",
+    image: images["service-1"].src,
+  },
+  {
+    title: "Fillers",
+    description: "Enhance your natural beauty with our premium dermal fillers.",
+    image: images["service-2"].src,
+  },
+  {
+    title: "Laser Therapy",
+    description: "Achieve clear skin with our advanced laser therapy options.",
+    image: images["service-3"].src,
+  },
+];
 
 export default function ServicesGrid() {
   return (
     <section className="py-16">
-      <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white rounded-xl shadow-card p-6">
-          <img src={images.service-1.src} alt={images.service-1.alt} className="w-full h-48 object-cover rounded-lg" />
-          <h3 className="text-lg font-semibold mt-4">Laser Treatments</h3>
-          <p className="text-sm text-muted">Advanced laser technology for skin rejuvenation.</p>
-        </div>
-        <div className="bg-white rounded-xl shadow-card p-6">
-          <img src={images.service-2.src} alt={images.service-2.alt} className="w-full h-48 object-cover rounded-lg" />
-          <h3 className="text-lg font-semibold mt-4">Botox Injections</h3>
-          <p className="text-sm text-muted">Smooth out wrinkles with our expert Botox treatments.</p>
-        </div>
-        <div className="bg-white rounded-xl shadow-card p-6">
-          <img src={images.service-3.src} alt={images.service-3.alt} className="w-full h-48 object-cover rounded-lg" />
-          <h3 className="text-lg font-semibold mt-4">Facial Treatments</h3>
-          <p className="text-sm text-muted">Revitalize your skin with our luxurious facials.</p>
-        </div>
+      <h2 className="text-3xl font-bold text-center">Our Services</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        {services.map((service, index) => (
+          <div key={index} className="bg-surface rounded-lg shadow-card p-6">
+            <img src={service.image} alt={service.title} className="w-full h-auto object-cover rounded-lg" />
+            <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
+            <p className="mt-2 text-gray-600">{service.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
