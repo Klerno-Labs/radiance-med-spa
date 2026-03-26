@@ -8,11 +8,6 @@ import Modal from '@/components/ui/Modal'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-export const metadata = {
-  title: 'Book Now | Radiance Med Spa',
-  description: 'Schedule your appointment at Radiance Med Spa. Choose your service, date, and time.',
-}
-
 export default function BookPage() {
   const [isSuccess, setIsSuccess] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
