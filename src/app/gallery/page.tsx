@@ -5,11 +5,6 @@ import Image from 'next/image'
 import Modal from '@/components/ui/Modal'
 import { X } from 'lucide-react'
 
-export const metadata = {
-  title: 'Gallery | Radiance Med Spa',
-  description: 'Explore our gallery before and after treatments and our luxury facility.',
-}
-
 export default function GalleryPage() {
   const galleryItems = [
     { id: 1, src: "https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop", alt: "Spa Products" },
