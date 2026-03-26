@@ -5,11 +5,6 @@ import Button from '@/components/ui/Button'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-export const metadata = {
-  title: 'Specials | Radiance Med Spa',
-  description: 'Current promotions and special offers at Radiance Med Spa.',
-}
-
 export default function SpecialsPage() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
