@@ -7,11 +7,6 @@ import Input from '@/components/ui/Input'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-export const metadata = {
-  title: 'Contact | Radiance Med Spa',
-  description: 'Get in touch with Radiance Med Spa. We are here to answer your questions.',
-}
-
 export default function ContactPage() {
   const [isSuccess, setIsSuccess] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
